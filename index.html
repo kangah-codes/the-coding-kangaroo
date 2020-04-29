@@ -50,14 +50,15 @@
     <div class="container">
       <header class="header">
   <span class="header__inner">
-    <a href="https://themes.gohugo.io//theme/hugo-theme-hello-friend/" class="logo" style="text-decoration: none;">
+    <a href="https://themes.gohugo.io//theme/hugo-theme-hello-friend/" class="logo" style="text-decoration: none;padding-right: 1%">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">hello friend</span>
+    <!-- <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/> -->
+  <img src="logo_dark.png" id="darklogo" ></a>
+    <span class="logo__text">the code kangaroo</span>
     <span class="logo__cursor"></span>
+
+  </span>
   
 </a>
 
@@ -301,8 +302,18 @@
     
     <div class="pagination">
   <div class="pagination__buttons">
-    
-    
+      <span class="button previous">
+        <a href="{{ .Paginator.Prev.URL }}">
+          <span class="button__icon">←</span>
+          <span class="button__text">P</span>
+        </a>
+      </span>
+      <span class="button next">
+        <a href="{{ .Paginator.Next.URL }}">
+          <span class="button__text">PP</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
   </div>
 </div>
 
@@ -316,25 +327,43 @@
     
       <a href="https://themes.gohugo.io//theme/hugo-theme-hello-friend/" class="logo" style="text-decoration: none;">
   
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-</span>
-    <span class="logo__text">hello friend</span>
+    <span class="logo__text">the code kangaroo</span>
     <span class="logo__cursor"></span>
   
 </a>
 
       <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
-      </div>
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Joshua Akangah</a></span>
+<!--         <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+ -->      </div>
     
   </div>
 </footer>
 
 <script src="static/assets/main.js"></script>
 <script src="static/assets/prism.js"></script>
+<script type="text/javascript">
+  // Toggle theme
+var getTheme = window.localStorage && window.localStorage.getItem("theme");
+
+if (getTheme == 'dark'){
+    document.querySelector("#darklogo").src = "logo_light.png";
+  }else{
+    document.querySelector("#darklogo").src = "logo_dark.png";
+  }
+
+var themeToggle = document.querySelector(".theme-toggle");
+
+themeToggle.addEventListener("click", function () {
+  getTheme = window.localStorage && window.localStorage.getItem("theme");
+  if (getTheme == 'dark'){
+    document.querySelector("#darklogo").src = "logo_light.png";
+  }else{
+    document.querySelector("#darklogo").src = "logo_dark.png";
+  }
+});
+
+</script>
 
 
       
