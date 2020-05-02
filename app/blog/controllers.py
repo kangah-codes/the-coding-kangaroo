@@ -8,3 +8,7 @@ controller = Blueprint('blog', __name__)
 @controller.route('/')
 def index():
 	return render_template('index.html')
+
+@controller.route('/post')
+def post():
+	return render_template('post.html')

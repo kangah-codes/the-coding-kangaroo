@@ -53,7 +53,7 @@
   <div class="nav-container">
     <a class="logo-link" href="/">
       <div id="logo-desktop">
-        <img src="logo_dark.png" id="darklogo" class="Logo__Desktop" style="width: 40px;height: 40px">
+        <img src="{{ url_for('static', filename='img/logo_dark.png') }}" id="darklogo" class="Logo__Desktop" style="width: 40px;height: 40px">
         <span class="logo__text">the code kangaroo</span>
         <span class="logo__cursor"></span>
 </div>
@@ -161,7 +161,9 @@ xmlns="http://www.w3.org/2000/svg"
             
                   {% for i in range(2) %}
                   {% if i == 1 %}
-                  <a href="/post" class="article-link" id="article-link-bigger">
+                  
+
+            <a href="/post" class="article-link" >
               <div class="article-data-outer">
                 <div class="image-container">
                   <img src="https://themes.gohugo.io//theme/hugo-theme-novela/images/hero-2.jpg" class="article-image" />
@@ -183,7 +185,7 @@ xmlns="http://www.w3.org/2000/svg"
               </div>
             </a>
                     {% else %}
-                    <a href="/post" class="article-link" >
+                    <a href="/post" class="article-link" id="article-link-bigger">
               <div class="article-data-outer">
                 <div class="image-container">
                   <img src="https://themes.gohugo.io//theme/hugo-theme-novela/images/hero-2.jpg" class="article-image" />
