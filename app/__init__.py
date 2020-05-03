@@ -3,6 +3,8 @@ from flask_bcrypt import Bcrypt
 from config import config_by_name
 from flask import Flask, render_template, redirect
 from flask_login import LoginManager, current_user, login_user
+from flask_blogging import SQLAStorage, BloggingEngine
+from sqlalchemy import MetaData
 
 # Define the WSGI application object
 app = Flask(__name__)
@@ -11,7 +13,6 @@ flask_bcrypt = Bcrypt()
 db.init_app(app)
 flask_bcrypt.init_app(app)
 login = LoginManager(app)
-
 # Configurations
 app.config.from_object(config_by_name['dev'])
 
